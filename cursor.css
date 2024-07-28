@@ -1,0 +1,128 @@
+/* Base cursor style */
+.cursor {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 1000;
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Pseudo-element for the gradient border */
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  background: conic-gradient(from 0deg, hotpink, orange, yellow, hotpink);
+  background-clip: padding-box;
+  mask: radial-gradient(circle, transparent 20%, black 41%);
+  -webkit-mask: radial-gradient(circle, transparent 20%, black 41%);
+  animation: spin 2s linear infinite;
+  z-index: -1;
+}
+
+/* Container for sparks effect */
+.cursor-sparks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Individual spark styles */
+.cursor-sparks .spark {
+  position: absolute;
+  width: 8px;
+  /* Slightly larger for better visibility */
+  height: 8px;
+  /* Slightly larger for better visibility */
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  transform-origin: center;
+  animation: sparkAnimation 1.5s infinite linear;
+}
+
+/* Position sparks around the cursor */
+.cursor-sparks .spark:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.cursor-sparks .spark:nth-child(2) {
+  top: 25%;
+  left: 75%;
+  animation-delay: 0.3s;
+}
+
+.cursor-sparks .spark:nth-child(3) {
+  top: 75%;
+  left: 75%;
+  animation-delay: 0.6s;
+}
+
+.cursor-sparks .spark:nth-child(4) {
+  top: 75%;
+  left: 25%;
+  animation-delay: 0.9s;
+}
+
+.cursor-sparks .spark:nth-child(5) {
+  top: 25%;
+  left: 25%;
+  animation-delay: 1.2s;
+}
+
+.cursor-sparks .spark:nth-child(6) {
+  top: 50%;
+  left: 25%;
+  animation-delay: 1.5s;
+}
+
+.cursor-sparks .spark:nth-child(7) {
+  top: 50%;
+  left: 75%;
+  animation-delay: 1.8s;
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Keyframes for spark animation */
+@keyframes sparkAnimation {
+  0% {
+    transform: rotate(0deg) translateX(40px) scale(0.5);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(40px) scale(1.2);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(40px) scale(0.5);
+    opacity: 0.8;
+  }
+}
