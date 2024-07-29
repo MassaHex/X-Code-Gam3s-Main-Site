@@ -9,7 +9,7 @@
   z-index: 1000;
   transform-origin: center;
   transition: transform 0.3s ease-out;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(.5);
 }
 
 /* Pseudo-element for the gradient border */
@@ -28,6 +28,10 @@
   -webkit-mask: radial-gradient(circle, transparent 20%, black 41%);
   animation: spin 2s linear infinite;
   z-index: -1;
+}
+
+.cursor.grow {
+  transform: translate(-50%, -50%) scale(.8);
 }
 
 /* Container for sparks effect */
