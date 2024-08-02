@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.top = `${e.clientY}px`;
   });
 
+  document.addEventListener('mouseenter', (e) => {
+    cursor.style.opacity = `1`;
+  });
+
+  document.addEventListener('mouseleave', (e) => {
+    cursor.style.opacity = `0`;
+  });
+
   links.forEach(link => {
     link.addEventListener('mouseenter', () => {
       cursor.classList.add('grow');
