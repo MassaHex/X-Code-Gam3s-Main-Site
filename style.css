@@ -1,11 +1,14 @@
 /* Variables */
 /* Global Styles */
+html {
+  cursor: none;
+}
+
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  cursor: none;
 }
 
 .background-animation {
@@ -73,6 +76,7 @@ body {
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
+  cursor: none;
   transition: background-color 0.3s, color 0.3s;
 }
 

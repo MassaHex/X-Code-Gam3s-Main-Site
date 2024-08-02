@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.querySelector('.cursor');
-  const cards = document.querySelectorAll('.card');
+  const links = document.querySelectorAll('.link');
 
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
   });
 
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
       cursor.classList.add('grow');
     });
 
-    card.addEventListener('mouseleave', () => {
+    link.addEventListener('mouseleave', () => {
       cursor.classList.remove('grow');
     });
   });
